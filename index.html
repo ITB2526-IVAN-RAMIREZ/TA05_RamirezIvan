@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Mundial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .clock {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .city {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .time {
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Reloj Mundial</h1>
+        <div id="clock-container"></div>
+        <div class="city">
+            <div id="new-york-time" class="time"></div>
+            <div id="london-time" class="time"></div>
+            <div id="tokyo-time" class="time"></div>
+            <div id="sydney-time" class="time"></div>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+
+            const options = { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: true
+            };
+
+            // Nueva York (GMT-5)
+            const newYorkTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+            document.getElementById("new-york-time").textContent = "Nueva York: " + newYorkTime.toLocaleTimeString('en-US', options);
+
+            // Londres (GMT)
+            const londonTime = new Date(now.toLocaleString('en-GB', { timeZone: 'Europe/London' }));
+            document.getElementById("london-time").textContent = "Londres: " + londonTime.toLocaleTimeString('en-GB', options);
+
+            // Tokio (GMT+9)
+            const tokyoTime = new Date(now.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }));
+            document.getElementById("tokyo-time").textContent = "Tokio: " + tokyoTime.toLocaleTimeString('ja-JP', options);
+
+            // Sídney (GMT+10)
+            const sydneyTime = new Date(now.toLocaleString('en-AU', { timeZone: 'Australia/Sydney' }));
+            document.getElementById("sydney-time").textContent = "Sídney: " + sydneyTime.toLocaleTimeString('en-AU', options);
+        }
+
+        setInterval(updateTime, 1000);  // Actualiza cada segundo
+        updateTime();  // Llama a la función inmediatamente para mostrar la hora al cargar la página
+    </script>
+
+</body>
+</html>
