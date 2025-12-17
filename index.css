@@ -1,21 +1,281 @@
-/* Configuramos la fuente Inter por defecto y fondo */
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f4f7f9; /* Fondo suave */
+/* --- Base y Tipografía --- */
+:root {
+    --color-blue-50: #eff6ff;
+    --color-blue-500: #3b82f6;
+    --color-blue-600: #2563eb;
+    --color-blue-700: #1d4ed8;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+    --color-white: #ffffff;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-light-bg: #f4f7f9;
 }
 
-/* Estilos personalizados para la cabecera (sombra) */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-light-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Layout Contenedor Principal --- */
+.main-content {
+    flex-grow: 1;
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+    padding-top: 2.5rem; /* py-10 */
+    padding-bottom: 2.5rem; /* py-10 */
+}
+
+/* Small breakpoint (sm) */
+@media (min-width: 640px) {
+    .main-content {
+        padding-left: 1.5rem; /* sm:px-6 */
+        padding-right: 1.5rem; /* sm:px-6 */
+    }
+}
+
+/* Large breakpoint (lg) */
+@media (min-width: 1024px) {
+    .main-content {
+        padding-left: 2rem; /* lg:px-8 */
+        padding-right: 2rem; /* lg:px-8 */
+    }
+}
+
+/* --- Header y Navegación --- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: var(--color-white);
+}
+
 .header-shadow {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
-/* Clase para un efecto hover sutil en tarjetas (transiciones) */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 800; /* font-extrabold */
+    color: var(--color-blue-600);
+    letter-spacing: -0.025em; /* tracking-tight */
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1.5rem; /* space-x-6 (3 * 0.5rem = 1.5rem) */
+    color: var(--color-gray-600);
+    font-weight: 500; /* font-medium */
+}
+
+.nav-link {
+    transition: color 0.15s ease-in-out;
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 0.5rem 0.75rem; /* px-3 py-2 */
+}
+
+.nav-link:hover {
+    color: var(--color-blue-500);
+}
+
+.contact-button {
+    border: 1px solid var(--color-blue-500);
+    background-color: var(--color-blue-50);
+    padding: 0.5rem 0.75rem; /* px-3 py-2 */
+}
+
+.contact-button:hover {
+    background-color: #e0f2fe; /* hover:bg-blue-100 */
+}
+
+.menu-button {
+    color: var(--color-gray-600);
+    transition: color 0.15s ease-in-out;
+}
+
+.menu-button:hover {
+    color: var(--color-blue-500);
+}
+
+/* Medium breakpoint (md) */
+@media (min-width: 768px) {
+    .hidden.md\:block {
+        display: block;
+    }
+    .menu-button.md\:hidden {
+        display: none;
+    }
+}
+
+/* --- Sección de Proyectos --- */
+#projects {
+    margin-bottom: 4rem; /* mb-16 */
+}
+
+.section-title {
+    font-size: 2.25rem; /* text-4xl (as it appears in HTML) */
+    font-weight: 700; /* font-bold */
+    color: var(--color-gray-800);
+    margin-bottom: 2rem; /* mb-8 */
+    border-bottom: 4px solid var(--color-blue-500);
+    padding-bottom: 0.5rem; /* pb-2 */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem; /* gap-8 */
+}
+
+/* --- Tarjeta de Proyecto (ARTICLE) --- */
+.project-card {
+    background-color: var(--color-white);
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* flex-col (default on mobile) */
+}
+
 .card-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto al pasar el mouse sobre la tarjeta */
 .card-hover:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.project-content {
+    padding: 1.5rem; /* p-6 */
+}
+
+.card-title {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: var(--color-gray-900);
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.card-text {
+    color: var(--color-gray-600);
+    font-size: 0.875rem; /* text-sm */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.card-link {
+    display: inline-block;
+    background-color: var(--color-blue-600);
+    color: var(--color-white);
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border-radius: 9999px; /* rounded-full */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    transition: background-color 0.15s ease-in-out;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    background-color: var(--color-blue-700);
+}
+
+.project-image {
+    width: 100%; /* w-full */
+    height: 16rem; /* h-64 */
+    object-fit: cover;
+}
+
+/* Medium breakpoint (md) - Flex Row for Projects */
+@media (min-width: 768px) {
+    .project-card.md\:flex-row {
+        flex-direction: row;
+    }
+    .project-content.md\:w-1\/2,
+    .project-image.md\:w-1\/2 {
+        width: 50%;
+    }
+}
+
+/* --- Sección Sobre Mí y Contacto (ARTICLE / ASIDE) --- */
+.grid-contact {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem; /* gap-8 */
+}
+
+/* Large breakpoint (lg) - 3 columns layout */
+@media (min-width: 1024px) {
+    .grid-contact {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .about-content.lg\:col-span-2 {
+        grid-column: span 2 / span 2;
+    }
+}
+
+.about-content {
+    background-color: var(--color-white);
+    padding: 2rem; /* p-8 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-lg */
+}
+
+.contact-aside {
+    background-color: var(--color-blue-500);
+    color: var(--color-white);
+    padding: 2rem; /* p-8 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.75rem; /* space-y-3 */
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+}
+
+.contact-list a {
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--color-gray-800);
+    color: var(--color-white);
+    padding-top: 1.5rem; /* py-6 */
+    padding-bottom: 1.5rem; /* py-6 */
+    margin-top: 3rem; /* mt-12 */
+}
+
+.footer-content {
+    text-align: center;
 }
