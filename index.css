@@ -92,7 +92,7 @@
         .projects article {
             display: flex;
             flex-direction: column; /* Por defecto apilado en móvil */
-            background-color: #242424; /* Fondo de la tarjeta del proyecto */
+            background-color: #242423; /* Fondo de la tarjeta del proyecto */
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
             overflow: hidden; /* Para contener bordes redondeados */
