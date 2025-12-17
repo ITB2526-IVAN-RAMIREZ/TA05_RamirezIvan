@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* HEADER EN UNA SOLA LÍNEA CON EL NAV */
+header {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* separa el título del nav */
+    align-items: center; /* alinea verticalmente */
+}
+
+/* NAV EN LÍNEA */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* coloca los li en fila */
+    gap: 20px; /* espacio entre items */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+    padding: 20px;
+}
+
+/* CONTENEDOR DE PROYECTO EN DOS COLUMNAS */
+.projects {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* espacio entre texto e imagen */
+}
+
+.projects img {
+    width: 250px; /* ajusta el tamaño según lo que quieras */
+    height: auto;
+    order: 2; /* mueve la imagen a la derecha */
+}
+
+.projects p {
+    flex: 1; /* ocupa espacio restante */
+}
+
+footer {
+    background-color: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
