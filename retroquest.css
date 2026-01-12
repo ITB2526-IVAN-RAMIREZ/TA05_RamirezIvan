@@ -42,7 +42,7 @@
             z-index: 1000;
         }
 
-        .Name h2 {
+      .Name h2 {
             margin: 0;
             font-size: 1.5rem;
             font-weight: 600;
@@ -78,19 +78,19 @@
             padding: 0.6rem 1.2rem !important;
             border-radius: 50px !important;
             font-weight: bold !important;
-            box-shadow: 0 4px 6px rgba(231, 76, 60, 0.4);
+            box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
         }
 
         .btn-contact-nav:hover {
             background-color: var(--accent-hover) !important;
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(231, 76, 60, 0.6);
+            box-shadow: 0 6px 12px rgba(231, 76, 60, 0.5);
         }
 
         /* MAIN Content */
         main {
             flex-grow: 1;
-            padding: 3rem 5%;
+            padding: 2rem 5%;
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
