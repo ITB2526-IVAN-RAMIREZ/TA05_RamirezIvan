@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Iván Ramírez Díaz</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header>
+        <div class="Name">
+            <h2>Iván Ramírez Díaz</h2>
+        </div>
+        <div class="container-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About me</a></li>
+                    <li><a href="contact.html" class="btn-contact-nav">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="main-title reveal">Let's Talk</h2>
+        <p class="subtitle"><span id="typed-text"></span><span id="cursor">|</span></p>
+
+        <div class="contact-form reveal">
+            <form id="contactForm" action="https://formspree.io/f/tu-email@ejemplo.com" method="POST">
+                
+                <input type="text" name="_gotcha" class="hidden-field">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="_subject" placeholder="What is this about?">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me more about your project..." required></textarea>
+                </div>
+
+                <div class="privacy-box">
+                    <strong>Data Privacy Notice:</strong> Your information will only be used to contact you regarding your inquiry. I do not share your data with third parties.
+                </div>
+
+                <label class="checkbox-group">
+                    <input type="checkbox" name="privacy_policy" required>
+                    <span>I have read and agree to the privacy policy regarding the processing of my personal data.</span>
+                </label>
+                
+                <button type="submit" class="btn-submit" id="submitBtn">Send Message</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Custom Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <h3 id="modalTitle">Success!</h3>
+            <p id="modalMsg">Your message has been sent.</p>
+            <button class="modal-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Canvas for Confetti -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <footer>
+        <div class="footer-content reveal">
+            <div class="footer-section">
+                <h4>Iván Ramírez Díaz</h4>
+                <p>Full Stack Developer specializing in high-performance web applications and creative UI/UX design.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html">About me</a>
+                </nav>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="LinkedIn">in</a>
+                    <a href="#" class="social-icon" title="GitHub">gh</a>
+                    <a href="#" class="social-icon" title="Twitter">tw</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Iván Ramírez Díaz. All rights reserved. | English Version</p>
+        </div>
+    </footer>
+
+    <script src="script"></script>  
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* Base Reset y Tipografía */
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -147,6 +147,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            text-indent: 1px;
+
         }
 
         /* Media Query para Tablet/Escritorio: El texto ocupa la mitad */
@@ -203,21 +205,74 @@
         .skills-aside p {
             margin-bottom: 0;
         }
-
-
-        /* FOOTER Styling */
+/* IMPROVED FOOTER */
         footer {
-            background-color: #1f1f1f; /* Gris muy oscuro */
-            color: #ffffff;
+            background-color: var(--bg-card);
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
             text-align: center;
-            padding: 1rem 0;
-            margin-top: auto; /* Empuja el footer hacia abajo */
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.5);
         }
 
-        footer p {
-            margin: 0;
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
             font-size: 0.9rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover { color: white; }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2a2a2a;
+            padding-top: 1.5rem;
+            color: #555;
+            font-size: 0.75rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content { text-align: center; }
+            .social-links { justify-content: center; }
         }
 
         /* Ajustes para Móviles (Header) */
@@ -256,3 +311,13 @@
                 padding: 1rem;
             }
         }
+            .content-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+                 @media (min-width: 768px) { .content-grid { grid-template-columns: 1fr 1fr; } }
+        
+                .bio p { line-height: 1.8; font-size: 1.1rem; margin-bottom: 1.5rem; }
+        
+                .skills-card { background: #1f1f1f; padding: 2rem; border-radius: 12px; border-left: 5px solid #e74c3c; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+                .skills-card h3 { margin-top: 0; color: #e74c3c; }
+                .skills-list { list-style: none; padding: 0; }
+                .skills-list li { margin-bottom: 0.8rem; display: flex; align-items: center; }
+                .skills-list li::before { content: "•"; color: #e74c3c; font-weight: bold; margin-right: 10px; }

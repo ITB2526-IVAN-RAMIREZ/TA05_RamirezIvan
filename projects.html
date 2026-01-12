@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projects.css">
+    <title>Proyectos - Iván Ramírez Díaz</title>
+    
+</head>
+<body>
+    <header>
+        <div class="Name">
+            <h2>Iván Ramírez Díaz</h2>
+        </div>
+        <div class="container-menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About me</a></li>
+                    <li><a href="contact.html" class="btn-contact-nav">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="section-header">
+            <h2>My Projects</h2>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="Todos">Todos</button>
+            <button class="filter-btn" data-filter="Web Design">Web Design</button>
+            <button class="filter-btn" data-filter="E-Commerce">E-Commerce</button>
+            <button class="filter-btn" data-filter="Apps">Apps</button>
+            <button class="filter-btn" data-filter="SaaS">SaaS</button>
+            <button class="filter-btn" data-filter="UI/UX">UI/UX</button>
+        </div>
+
+        <div class="projects-grid" id="projectGrid">
+            <!-- 1 -->
+            <article class="project-card" data-category="Web Design"> 
+                <a href="Retroquest.html">
+                <div class="project-thumb"><img src="img/logo-retroquest.png" alt="Retroquest"></div>
+                <div class="project-body">
+                    <span class="project-category">Web Design</span>
+                    <h3>Retroquest Gaming</h3>
+                    <p>Plataforma de venta de videojuegos clásicos y modernos.</p>
+                    <div class="tech-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">WordPress</span></div>
+                </div>
+                </a>
+            </article>
+            <!-- 2 -->
+            <article class="project-card" data-category="Web Design">
+                <a href="natura.html">
+                <div class="project-thumb"><img src="img/LogoNatura.png" alt="Natura"></div>
+                <div class="project-body">
+                    <span class="project-category">Web Design</span>
+                    <h3>Natura Wellness</h3>
+                    <p>Sitio corporativo enfocado en salud orgánica y recetas.</p>
+                    <div class="tech-tags"><span class="tag">Google Sites</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
+                </div>
+                </a>
+            </article>
+            <!-- 3 -->
+            <article class="project-card" data-category="SaaS">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/53/600/400" alt="DataDash"></div>
+                <div class="project-body">
+                    <span class="project-category">SaaS</span>
+                    <h3>DataDash Dashboard</h3>
+                    <p>Panel de control analítico para visualización de Big Data.</p>
+                    <div class="tech-tags"><span class="tag">React</span><span class="tag">D3.js</span></div>
+                </div>
+            </article>
+            <!-- 4 -->
+            <article class="project-card" data-category="Apps">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/54/600/400" alt="Fintrack"></div>
+                <div class="project-body">
+                    <span class="project-category">Apps</span>
+                    <h3>Fintrack App</h3>
+                    <p>Aplicación móvil de gestión financiera personal y ahorros.</p>
+                    <div class="tech-tags"><span class="tag">Flutter</span><span class="tag">Firebase</span></div>
+                </div>
+            </article>
+            <!-- 5 -->
+            <article class="project-card" data-category="UI/UX">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/55/600/400" alt="Lumina"></div>
+                <div class="project-body">
+                    <span class="project-category">UI/UX</span>
+                    <h3>Lumina Studio</h3>
+                    <p>Diseño de interfaz para agencia de fotografía creativa.</p>
+                    <div class="tech-tags"><span class="tag">Figma</span><span class="tag">Branding</span></div>
+                </div>
+            </article>
+            <!-- 6 -->
+            <article class="project-card" data-category="E-Commerce">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/56/600/400" alt="EcoShop"></div>
+                <div class="project-body">
+                    <span class="project-category">E-Commerce</span>
+                    <h3>EcoShop</h3>
+                    <p>Mercado sostenible para productos de bajo impacto ambiental.</p>
+                    <div class="tech-tags"><span class="tag">Next.js</span><span class="tag">Stripe</span></div>
+                </div>
+            </article>
+            <!-- 7 -->
+            <article class="project-card" data-category="SaaS">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/57/600/400" alt="SmartCity"></div>
+                <div class="project-body">
+                    <span class="project-category">SaaS</span>
+                    <h3>SmartCity API</h3>
+                    <p>Infraestructura de backend para gestión de tráfico urbano.</p>
+                    <div class="tech-tags"><span class="tag">Node.js</span><span class="tag">Express</span></div>
+                </div>
+            </article>
+            <!-- 8 -->
+            <article class="project-card" data-category="Apps">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/58/600/400" alt="HealthPlus"></div>
+                <div class="project-body">
+                    <span class="project-category">Apps</span>
+                    <h3>HealthPlus</h3>
+                    <p>Telemedicina y gestión de citas médicas en tiempo real.</p>
+                    <div class="tech-tags"><span class="tag">React Native</span></div>
+                </div>
+            </article>
+            <!-- 9 -->
+            <article class="project-card" data-category="Web Design">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/59/600/400" alt="Kinetix"></div>
+                <div class="project-body">
+                    <span class="project-category">Web Design</span>
+                    <h3>Kinetix Logistics</h3>
+                    <p>Landing page para empresa de logística internacional.</p>
+                    <div class="tech-tags"><span class="tag">GSAP</span><span class="tag">AOS</span></div>
+                </div>
+            </article>
+            <!-- 10 -->
+            <article class="project-card" data-category="SaaS">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/60/600/400" alt="CryptoPulse"></div>
+                <div class="project-body">
+                    <span class="project-category">SaaS</span>
+                    <h3>CryptoPulse</h3>
+                    <p>Monitor de mercados de criptomonedas con alertas inteligentes.</p>
+                    <div class="tech-tags"><span class="tag">Python</span><span class="tag">Socket.io</span></div>
+                </div>
+            </article>
+            <!-- 11 -->
+            <article class="project-card" data-category="UI/UX">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/61/600/400" alt="Minimal"></div>
+                <div class="project-body">
+                    <span class="project-category">UI/UX</span>
+                    <h3>Minimal Portfolio</h3>
+                    <p>Concepto de portafolio ultra-minimalista para diseñadores.</p>
+                    <div class="tech-tags"><span class="tag">UX Design</span></div>
+                </div>
+            </article>
+            <!-- 12 -->
+            <article class="project-card" data-category="Apps">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/62/600/400" alt="ChefMate"></div>
+                <div class="project-body">
+                    <span class="project-category">Apps</span>
+                    <h3>ChefMate App</h3>
+                    <p>Asistente de cocina con IA para sugerencias de recetas.</p>
+                    <div class="tech-tags"><span class="tag">Python</span><span class="tag">TensorFlow</span></div>
+                </div>
+            </article>
+            <!-- 13 -->
+            <article class="project-card" data-category="E-Commerce">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/63/600/400" alt="AutoReserve"></div>
+                <div class="project-body">
+                    <span class="project-category">E-Commerce</span>
+                    <h3>AutoReserve</h3>
+                    <p>Sistema de reserva y compra de vehículos de ocasión.</p>
+                    <div class="tech-tags"><span class="tag">Laravel</span><span class="tag">MySQL</span></div>
+                </div>
+            </article>
+            <!-- 14 -->
+            <article class="project-card" data-category="SaaS">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/64/600/400" alt="Streamly"></div>
+                <div class="project-body">
+                    <span class="project-category">SaaS</span>
+                    <h3>Streamly</h3>
+                    <p>Servicio de streaming de audio para artistas independientes.</p>
+                    <div class="tech-tags"><span class="tag">AWS</span><span class="tag">Node.js</span></div>
+                </div>
+            </article>
+            <!-- 15 -->
+            <article class="project-card" data-category="E-Commerce">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/65/600/400" alt="UrbanWear"></div>
+                <div class="project-body">
+                    <span class="project-category">E-Commerce</span>
+                    <h3>UrbanWear</h3>
+                    <p>Tienda de moda urbana con probador virtual básico.</p>
+                    <div class="tech-tags"><span class="tag">Three.js</span><span class="tag">React</span></div>
+                </div>
+            </article>
+            <!-- 16 -->
+            <article class="project-card" data-category="Web Design">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/66/600/400" alt="LawFirm"></div>
+                <div class="project-body">
+                    <span class="project-category">Web Design</span>
+                    <h3>LawFirm Pro</h3>
+                    <p>Sitio profesional para bufete de abogados corporativos.</p>
+                    <div class="tech-tags"><span class="tag">jQuery</span><span class="tag">Bootstrap</span></div>
+                </div>
+            </article>
+            <!-- 17 -->
+            <article class="project-card" data-category="Apps">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/67/600/400" alt="TravelMap"></div>
+                <div class="project-body">
+                    <span class="project-category">Apps</span>
+                    <h3>TravelMap</h3>
+                    <p>Guía de viajes interactiva basada en geolocalización.</p>
+                    <div class="tech-tags"><span class="tag">Google Maps API</span></div>
+                </div>
+            </article>
+            <!-- 18 -->
+            <article class="project-card" data-category="SaaS">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/68/600/400" alt="TaskMaster"></div>
+                <div class="project-body">
+                    <span class="project-category">SaaS</span>
+                    <h3>TaskMaster</h3>
+                    <p>Herramienta de gestión de tareas ágiles para equipos remotos.</p>
+                    <div class="tech-tags"><span class="tag">Redux</span><span class="tag">Express</span></div>
+                </div>
+            </article>
+            <!-- 19 -->
+            <article class="project-card" data-category="SaaS">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/69/600/400" alt="FitLife"></div>
+                <div class="project-body">
+                    <span class="project-category">SaaS</span>
+                    <h3>FitLife CRM</h3>
+                    <p>Gestión de clientes y rutinas para gimnasios de alto nivel.</p>
+                    <div class="tech-tags"><span class="tag">Angular</span><span class="tag">PostgreSQL</span></div>
+                </div>
+            </article>
+            <!-- 20 -->
+            <article class="project-card" data-category="Apps">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/70/600/400" alt="AquaMonitor"></div>
+                <div class="project-body">
+                    <span class="project-category">Apps</span>
+                    <h3>AquaMonitor</h3>
+                    <p>App de IoT para el seguimiento del consumo de agua doméstico.</p>
+                    <div class="tech-tags"><span class="tag">IoT</span><span class="tag">Arduino</span></div>
+                </div>
+            </article>
+            <!-- 21 -->
+            <article class="project-card" data-category="UI/UX">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/71/600/400" alt="Glow"></div>
+                <div class="project-body">
+                    <span class="project-category">UI/UX</span>
+                    <h3>Glow Cosmetics</h3>
+                    <p>Rediseño completo de experiencia de compra para marca de belleza.</p>
+                    <div class="tech-tags"><span class="tag">High-Fidelity</span></div>
+                </div>
+            </article>
+            <!-- 22 -->
+            <article class="project-card" data-category="SaaS">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/72/600/400" alt="EduLearn"></div>
+                <div class="project-body">
+                    <span class="project-category">SaaS</span>
+                    <h3>EduLearn LMS</h3>
+                    <p>Plataforma de aprendizaje en línea con cursos interactivos.</p>
+                    <div class="tech-tags"><span class="tag">Moodle</span><span class="tag">PHP</span></div>
+                </div>
+            </article>
+            <!-- 23 -->
+            <article class="project-card" data-category="Apps">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/73/600/400" alt="PixelArt"></div>
+                <div class="project-body">
+                    <span class="project-category">Apps</span>
+                    <h3>PixelArt Generator</h3>
+                    <p>Herramienta web para convertir fotos en arte de píxeles.</p>
+                    <div class="tech-tags"><span class="tag">Canvas API</span></div>
+                </div>
+            </article>
+            <!-- 24 -->
+            <article class="project-card" data-category="Apps">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/74/600/400" alt="QuickServe"></div>
+                <div class="project-body">
+                    <span class="project-category">Apps</span>
+                    <h3>QuickServe</h3>
+                    <p>Sistema de pedidos en mesa para restaurantes y bares.</p>
+                    <div class="tech-tags"><span class="tag">PWA</span><span class="tag">Firebase</span></div>
+                </div>
+            </article>
+            <!-- 25 -->
+            <article class="project-card" data-category="Web Design">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/75/600/400" alt="SkyView"></div>
+                <div class="project-body">
+                    <span class="project-category">Web Design</span>
+                    <h3>SkyView Real Estate</h3>
+                    <p>Portal inmobiliario con tours virtuales de 360 grados.</p>
+                    <div class="tech-tags"><span class="tag">Pannellum</span></div>
+                </div>
+            </article>
+            <!-- 26 -->
+            <article class="project-card" data-category="SaaS">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/76/600/400" alt="CloudGuard"></div>
+                <div class="project-body">
+                    <span class="project-category">SaaS</span>
+                    <h3>CloudGuard</h3>
+                    <p>Servicio de seguridad y firewall para pequeñas empresas.</p>
+                    <div class="tech-tags"><span class="tag">Go</span><span class="tag">Docker</span></div>
+                </div>
+            </article>
+            <!-- 27 -->
+            <article class="project-card" data-category="Apps">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/77/600/400" alt="GreenRoute"></div>
+                <div class="project-body">
+                    <span class="project-category">Apps</span>
+                    <h3>GreenRoute</h3>
+                    <p>Optimización de rutas de transporte público ecológico.</p>
+                    <div class="tech-tags"><span class="tag">Mapbox</span></div>
+                </div>
+            </article>
+            <!-- 28 -->
+            <article class="project-card" data-category="Web Design">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/78/600/400" alt="VibeRadio"></div>
+                <div class="project-body">
+                    <span class="project-category">Web Design</span>
+                    <h3>VibeRadio</h3>
+                    <p>Directorio de radios online con reproductor integrado.</p>
+                    <div class="tech-tags"><span class="tag">Audio API</span></div>
+                </div>
+            </article>
+            <!-- 29 -->
+            <article class="project-card" data-category="SaaS">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/79/600/400" alt="JobHunter"></div>
+                <div class="project-body">
+                    <span class="project-category">SaaS</span>
+                    <h3>JobHunter</h3>
+                    <p>Portal de empleo especializado en perfiles tecnológicos.</p>
+                    <div class="tech-tags"><span class="tag">GraphQL</span><span class="tag">Apollo</span></div>
+                </div>
+            </article>
+            <!-- 30 -->
+            <article class="project-card" data-category="Apps">
+                <div class="project-thumb"><img src="https://picsum.photos/seed/80/600/400" alt="ZenSpace"></div>
+                <div class="project-body">
+                    <span class="project-category">Apps</span>
+                    <h3>ZenSpace App</h3>
+                    <p>Aplicación de meditación guiada y sonidos relajantes.</p>
+                    <div class="tech-tags"><span class="tag">Swift</span><span class="tag">Core Audio</span></div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content reveal">
+            <div class="footer-section">
+                <h4>Iván Ramírez Díaz</h4>
+                <p>Full Stack Developer specializing in high-performance web applications and creative UI/UX design.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html">About me</a>
+                </nav>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="LinkedIn">in</a>
+                    <a href="#" class="social-icon" title="GitHub">gh</a>
+                    <a href="#" class="social-icon" title="Twitter">tw</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Iván Ramírez Díaz. All rights reserved. | English Version</p>
+        </div>
+    </footer>
+    <script src="script"></script>
+</body>
+</html>

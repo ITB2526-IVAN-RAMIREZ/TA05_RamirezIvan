@@ -1,0 +1,185 @@
+
+        // LÓGICA DE FILTRADO
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Cambiar estado activo de los botones
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+
+                    if (filterValue === 'Todos' || filterValue === cardCategory) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+      /* 1. NATIVE INTERSECTION OBSERVER */
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        /* 2. NATIVE TYPEWRITER EFFECT */
+        const typedElement = document.getElementById('typed-text');
+        const phrases = [
+            'Have a project in mind?', 
+            'Want to collaborate?', 
+            "Reach out and let's build something great."
+        ];
+        let phraseIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+
+        function type() {
+            const current = phrases[phraseIdx];
+            if (!typedElement) return;
+
+            if (isDeleting) {
+                typedElement.textContent = current.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typedElement.textContent = current.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let typeSpeed = isDeleting ? 30 : 50;
+
+            if (!isDeleting && charIdx === current.length) {
+                isDeleting = true;
+                typeSpeed = 2000;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                phraseIdx = (phraseIdx + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        /* 3. NATIVE MODAL LOGIC */
+        const modal = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMsg = document.getElementById('modalMsg');
+
+        function showModal(title, message, isError = false) {
+            modalTitle.textContent = title;
+            modalMsg.textContent = message;
+            modalTitle.style.color = isError ? '#ff4444' : 'var(--accent)';
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        /* 4. NATIVE CANVAS CONFETTI */
+        let confettiCanvas, ctx, particles = [];
+        function initConfetti() {
+            confettiCanvas = document.getElementById('confetti-canvas');
+            if (!confettiCanvas) return;
+            ctx = confettiCanvas.getContext('2d');
+            resizeConfetti();
+            window.addEventListener('resize', resizeConfetti);
+        }
+
+        function resizeConfetti() {
+            confettiCanvas.width = window.innerWidth;
+            confettiCanvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * confettiCanvas.width;
+                this.y = confettiCanvas.height + 10;
+                this.size = Math.random() * 8 + 4;
+                this.speedY = Math.random() * -15 - 5;
+                this.speedX = Math.random() * 6 - 3;
+                this.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 10 - 5;
+            }
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.speedY += 0.2;
+                this.rotation += this.rotationSpeed;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+                ctx.restore();
+            }
+        }
+
+        function startConfetti() {
+            particles = Array.from({length: 100}, () => new Particle());
+            function animate() {
+                ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+                particles.forEach((p, i) => {
+                    p.update();
+                    p.draw();
+                    if (p.y > confettiCanvas.height + 20) particles.splice(i, 1);
+                });
+                if (particles.length > 0) requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        /* SAFE INITIALIZATION AND FORM HANDLING */
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inicializar efectos visuales
+            type();
+            initConfetti();
+
+            // Manejo del formulario
+            const form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const btn = document.getElementById('submitBtn');
+                    btn.disabled = true;
+                    btn.textContent = 'Sending...';
+
+                    const formData = new FormData(form);
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            startConfetti();
+                            showModal('Success!', 'Thank you, Iván. Your message has been sent successfully.');
+                            form.reset();
+                        } else {
+                            throw new Error();
+                        }
+                    } catch (err) {
+                        showModal('Error', 'Something went wrong. Please try again later.', true);
+                    } finally {
+                        btn.disabled = false;
+                        btn.textContent = 'Send Message';
+                    }
+                });
+            }
+        });
